@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Space Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Disk Space Usage Report</h2>
+    <canvas id="diskChart"></canvas>
+
+    <script>
+        var ctx = document.getElementById('diskChart').getContext('2d');
+        var diskChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["C"],
+                datasets: [{
+                    label: 'Free Space (GB)',
+                    data: [439.71],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Total Space (GB)',
+                    data: [930.72],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

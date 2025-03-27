@@ -1,0 +1,3 @@
+# Ignore Jenkins-specific files
+.jenkins/
+workspace/
